@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#06080f"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="belly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="beak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Penguin scaled to fit inside the center 660 safe zone -->
+  <g transform="translate(512 540) scale(0.78)">
+    <ellipse cx="0" cy="60" rx="240" ry="290" fill="url(#body)"/>
+    <ellipse cx="0" cy="120" rx="155" ry="220" fill="url(#belly)"/>
+    <ellipse cx="0" cy="-180" rx="195" ry="180" fill="url(#head)"/>
+    <ellipse cx="-50" cy="-235" rx="80" ry="40" fill="#475569" opacity="0.5"/>
+
+    <circle cx="-72" cy="-200" r="44" fill="#ffffff"/>
+    <circle cx="72" cy="-200" r="44" fill="#ffffff"/>
+    <circle cx="-68" cy="-195" r="22" fill="#0b1220"/>
+    <circle cx="76" cy="-195" r="22" fill="#0b1220"/>
+    <circle cx="-64" cy="-200" r="7" fill="#38bdf8" filter="url(#cyanGlow)"/>
+    <circle cx="80" cy="-200" r="7" fill="#38bdf8" filter="url(#cyanGlow)"/>
+
+    <path d="M -36 -120 Q 0 -90 36 -120 Q 0 -78 -36 -120 Z" fill="url(#beak)" stroke="#b45309" stroke-width="2"/>
+
+    <path d="M -220 -40 Q -290 80 -240 240 Q -210 130 -200 50 Z" fill="url(#body)"/>
+    <path d="M 220 -40 Q 290 80 240 240 Q 210 130 200 50 Z" fill="url(#body)"/>
+
+    <ellipse cx="-95" cy="345" rx="55" ry="18" fill="url(#beak)"/>
+    <ellipse cx="95" cy="345" rx="55" ry="18" fill="url(#beak)"/>
+
+    <g transform="translate(0 130)" font-family="ui-monospace, Menlo, monospace" font-weight="700" font-size="120" fill="#0ea5e9" text-anchor="middle">
+      <text y="0" filter="url(#cyanGlow)">$_</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.85"/>
+      <stop offset="55%" stop-color="#111827" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#06080f" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#06080f"/>
+    </linearGradient>
+
+    <linearGradient id="head" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="belly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <linearGradient id="beak" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+
+    <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Square background (the launcher mask will crop to its shape) -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- Subtle scan-line texture -->
+  <g opacity="0.06" fill="#38bdf8">
+    <rect x="0" y="0" width="1024" height="1.5"/>
+    <rect x="0" y="60" width="1024" height="1.5"/>
+    <rect x="0" y="120" width="1024" height="1.5"/>
+    <rect x="0" y="180" width="1024" height="1.5"/>
+    <rect x="0" y="240" width="1024" height="1.5"/>
+    <rect x="0" y="300" width="1024" height="1.5"/>
+    <rect x="0" y="360" width="1024" height="1.5"/>
+    <rect x="0" y="420" width="1024" height="1.5"/>
+    <rect x="0" y="480" width="1024" height="1.5"/>
+    <rect x="0" y="540" width="1024" height="1.5"/>
+    <rect x="0" y="600" width="1024" height="1.5"/>
+    <rect x="0" y="660" width="1024" height="1.5"/>
+    <rect x="0" y="720" width="1024" height="1.5"/>
+    <rect x="0" y="780" width="1024" height="1.5"/>
+    <rect x="0" y="840" width="1024" height="1.5"/>
+    <rect x="0" y="900" width="1024" height="1.5"/>
+    <rect x="0" y="960" width="1024" height="1.5"/>
+  </g>
+
+  <!-- Big soft glow behind penguin -->
+  <circle cx="512" cy="500" r="380" fill="url(#glow)"/>
+
+  <!-- Penguin grouped, sized inside the 660-safe-zone -->
+  <g transform="translate(512 540)">
+    <!-- Body silhouette -->
+    <ellipse cx="0" cy="60" rx="240" ry="290" fill="url(#body)"/>
+    <!-- White belly -->
+    <ellipse cx="0" cy="120" rx="155" ry="220" fill="url(#belly)"/>
+    <!-- Head -->
+    <ellipse cx="0" cy="-180" rx="195" ry="180" fill="url(#head)"/>
+    <!-- Head highlight -->
+    <ellipse cx="-50" cy="-235" rx="80" ry="40" fill="#475569" opacity="0.5"/>
+
+    <!-- Eye whites -->
+    <circle cx="-72" cy="-200" r="44" fill="#ffffff"/>
+    <circle cx="72" cy="-200" r="44" fill="#ffffff"/>
+    <!-- Pupils -->
+    <circle cx="-68" cy="-195" r="22" fill="#0b1220"/>
+    <circle cx="76" cy="-195" r="22" fill="#0b1220"/>
+    <!-- Glowing cyan glint -->
+    <circle cx="-64" cy="-200" r="7" fill="#38bdf8" filter="url(#cyanGlow)"/>
+    <circle cx="80" cy="-200" r="7" fill="#38bdf8" filter="url(#cyanGlow)"/>
+
+    <!-- Beak -->
+    <path d="M -36 -120 Q 0 -90 36 -120 Q 0 -78 -36 -120 Z" fill="url(#beak)" stroke="#b45309" stroke-width="2"/>
+
+    <!-- Flippers -->
+    <path d="M -220 -40 Q -290 80 -240 240 Q -210 130 -200 50 Z" fill="url(#body)"/>
+    <path d="M 220 -40 Q 290 80 240 240 Q 210 130 200 50 Z" fill="url(#body)"/>
+
+    <!-- Feet -->
+    <ellipse cx="-95" cy="345" rx="55" ry="18" fill="url(#beak)"/>
+    <ellipse cx="95" cy="345" rx="55" ry="18" fill="url(#beak)"/>
+
+    <!-- Cyan terminal prompt "$_" inside the belly -->
+    <g transform="translate(0 130)" font-family="ui-monospace, Menlo, monospace" font-weight="700" font-size="120" fill="#0ea5e9" text-anchor="middle">
+      <text y="0" filter="url(#cyanGlow)">$_</text>
+    </g>
+  </g>
+
+  <!-- Outer cyan glow ring (very subtle frame for non-adaptive masks) -->
+  <rect x="6" y="6" width="1012" height="1012" rx="220" ry="220" fill="none" stroke="#38bdf8" stroke-width="6" opacity="0.55"/>
+</svg>
