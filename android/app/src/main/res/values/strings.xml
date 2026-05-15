@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Linux Drill</string>
+    <string name="title_activity_main">Linux Drill</string>
+    <string name="package_name">com.heimburge.linuxdrill</string>
+    <string name="custom_url_scheme">com.heimburge.linuxdrill</string>
+</resources>
